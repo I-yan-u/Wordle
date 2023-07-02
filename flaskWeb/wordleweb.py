@@ -4,13 +4,14 @@ starts a Flask web application
 """
 
 from flask import Flask, render_template, url_for, request, redirect
-#from engine.main import Game
+from engine.main import Game
+from engine.wordhelper.wordchecker import real
 import json
 
 app = Flask(__name__)
 
 history = []
-print(history)
+tries = 6
 
 @app.route('/', strict_slashes=False, methods=['POST', 'GET'])
 def index():

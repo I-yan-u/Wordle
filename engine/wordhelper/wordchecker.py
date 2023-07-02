@@ -23,7 +23,7 @@ def inst(wstring):
 
 
 def real(wstring):
-    """ """
+    """ Check if word is a real word """
     with open("sgb-words.txt", "r") as lib:
         for wds in lib:
             if wstring == wds.strip():
