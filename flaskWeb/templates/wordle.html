@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block head%}
+<title>Wordle</title>
+{% endblock %}
+
+{% block body %}
+<header>
+  <h1><strong>Wordle</strong></h1>
+  <hr>
+</header>
+<main>
+  <div>
+    <section class="summary">
+      <p><h3>Wordle summary</h3></p>
+      <p>Wordle is a 5 letter word guessing game. You have 6 tries.</p>
+    </section>
+    <br>
+    <div class="history">
+      <p><h4>History</h4></p>
+      <form id="del" action="/delete_last">
+        <input class="button" type="submit" onclick="delHistory()" value="Delete">
+        <input class="button" type="submit" onclick="delAllHistory()" value="Delete All" 
+        formaction="/delete">
+          <ul>
+          {% for history in histories %} 
+            <li id="list">{{ history }}</li>
+          {% endfor %}
+          </ul>
+      </form>
+    </div>
+    <br>
+    <section class="main">
+      <p><h4>Enter word</h4></p>
+      <form id="form" action="/" method="POST">
+          <input type="text" name="W1L1" maxlength="1" placeholder="e" onkeyup="changeFocus(event)" required>
+          <input type="text" name="W1L2" maxlength="1" placeholder="n" onkeyup="changeFocus(event)" required>
+          <input type="text" name="W1L3" maxlength="1" placeholder="t" onkeyup="changeFocus(event)" required>
+          <input type="text" name="W1L4" maxlength="1" placeholder="e" onkeyup="changeFocus(event)" required>
+          <input type="text" name="W1L5" maxlength="1" placeholder="r" onkeyup="changeFocus(event)" required>
+          <input class="button" name="button" type="submit" value="Check">
+        </form>
+    </section>
+  </div>
+</main>
+<footer class="footer">
+  <p> &#169; Yanwordle &#8482;</p>
+</footer>
+<script type="text/javascript" src="/static/js/jscript.js">
+</script>
+{% endblock%}
