@@ -13,7 +13,8 @@
   <div>
     <section class="summary">
       <p><h3>Wordle summary</h3></p>
-      <p>Wordle is a 5 letter word guessing game. You have 6 tries.</p>
+      <p>Wordle is a 5 letter word guessing game. You have {{tries}} tries.</p>
+      <p>{{msg}}</p>
     </section>
     <br>
     <div class="history">
@@ -32,7 +33,7 @@
     <br>
     <section class="main">
       <p><h4>Enter word</h4></p>
-      <form id="form" action="/" method="POST">
+      <form id="form" action="/check" method="POST">
           <input type="text" name="W1L1" maxlength="1" placeholder="e" onkeyup="changeFocus(event)" required>
           <input type="text" name="W1L2" maxlength="1" placeholder="n" onkeyup="changeFocus(event)" required>
           <input type="text" name="W1L3" maxlength="1" placeholder="t" onkeyup="changeFocus(event)" required>

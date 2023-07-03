@@ -30,7 +30,7 @@ def load_json():
 
 
 class Game:
-    #tries = 6
+    tries = 6
     history_list = []
     answer = ""
     guage = []
