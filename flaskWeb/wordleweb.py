@@ -2,10 +2,13 @@
 """
 starts a Flask web application
 """
+import sys
+
+sys.path.insert(1, '/home/iyanu/Documents/Wordle/engine')
 
 from flask import Flask, render_template, url_for, request, redirect
-from engine.main import Game
-from engine.wordhelper.wordchecker import real
+from main import Game
+from wordhelper.wordchecker import real
 import json
 
 app = Flask(__name__)
@@ -49,7 +52,7 @@ def deleteHis():
 
 """@app.route('/check', strict_slashes=False, methods=["POST", "GET"])
 def check():
-
+    
     return index()"""
 
 if __name__ == '__main__':
